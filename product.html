@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="index.html" style="color:white;">Flipkart</a></div>
+        <div class="search-container"><input type="text" placeholder="Search..."></div>
+        <div class="nav-links">
+            <a href="index.html" class="login-btn">Home</a>
+            <div class="cart-icon">🛒 Cart</div>
+        </div>
+    </nav>
+
+    <div class="detail-container" id="detail-app">
+        </div>
+
+    <div style="background:#f1f3f6; padding:20px; text-align:center; color:#878787;">
+        Safe and Secure Payments. Easy returns. 100% Authentic products.
+    </div>
+
+    <script src="data.js"></script>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const id = parseInt(params.get('id'));
+        const product = products.find(p => p.id === id);
+        const app = document.getElementById('detail-app');
+
+        if(product) {
+            app.innerHTML = `
+                <div class="left-view">
+                    <img src="${product.img}" alt="${product.title}">
+                    <div class="action-btns">
+                        <button class="btn-lg cart-btn"> ADD TO CART</button>
+                        <button class="btn-lg buy-btn"> BUY NOW</button>
+                    </div>
+                </div>
+                <div class="right-view">
+                    <p class="breadcrumb">Home > ${product.category} > ${product.brand} > ${product.title}</p>
+                    <h1 class="big-title">${product.title}</h1>
+                    <div class="product-rating" style="font-size:14px; padding:4px 8px;">${product.rating} ★</div>
+                    <h1 class="big-price">${formatPrice(product.price)}</h1>
+                    
+                    <h3>Available Offers</h3>
+                    <ul class="offers" style="margin-top:10px;">
+                        <li><span class="tag-icon">🏷️</span> <strong>Bank Offer</strong> 5% Unlimited Cashback on Axis Bank Credit Card</li>
+                        <li><span class="tag-icon">🏷️</span> <strong>Bank Offer</strong> 10% Off on Bank of Baroda Mastercard debit card first time transaction</li>
+                        <li><span class="tag-icon">🏷️</span> <strong>Special Price</strong> Get extra 20% off (price inclusive of discount)</li>
+                        <li><span class="tag-icon">🏷️</span> <strong>Partner Offer</strong> Sign up for Flipkart Pay Later and get Flipkart Gift Card worth ₹100*</li>
+                    </ul>
+
+                    <br>
+                    <div style="display:flex; gap:50px; margin-top:20px;">
+                        <div style="color:#878787;">Warranty</div>
+                        <div>1 Year Manufacturer Warranty</div>
+                    </div>
+                    <div style="display:flex; gap:50px; margin-top:10px;">
+                        <div style="color:#878787;">Seller</div>
+                        <div><strong>SuperComNet</strong> <span style="background:#2874f0; color:white; font-size:10px; padding:2px 5px; border-radius:10px;">Plus</span>
+                        <br>7 Days Service Center Replacement</div>
+                    </div>
+                </div>
+            `;
+        } else {
+            app.innerHTML = "<h2>Product not found</h2>";
+        }
+    </script>
+</body>
+</html>

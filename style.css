@@ -1,0 +1,64 @@
+/* GLOBAL RESET */
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
+body { background-color: #f1f3f6; color: #212121; }
+a { text-decoration: none; color: inherit; }
+ul { list-style: none; }
+
+/* NAVBAR */
+.navbar { background-color: #2874f0; height: 60px; display: flex; align-items: center; padding: 0 10%; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,.2); }
+.logo { color: white; font-style: italic; font-weight: 900; font-size: 20px; margin-right: 20px; }
+.search-container { flex: 1; display: flex; background: white; border-radius: 2px; padding: 5px; max-width: 500px; }
+.search-container input { width: 100%; border: none; outline: none; font-size: 14px; padding-left: 10px; }
+.nav-links { display: flex; gap: 30px; margin-left: auto; align-items: center; color: white; font-weight: 500; font-size: 14px; }
+.login-btn { background: white; color: #2874f0; border: 1px solid #dbdbdb; padding: 5px 30px; border-radius: 2px; font-weight: bold; cursor: pointer; }
+.cart-icon { display: flex; align-items: center; gap: 5px; }
+
+/* CATEGORY HEADER (Sub-nav) */
+.sub-nav { background: white; display: flex; justify-content: center; gap: 40px; padding: 10px; border-bottom: 1px solid #ddd; font-size: 14px; font-weight: 500; }
+.sub-nav div:hover { color: #2874f0; cursor: pointer; }
+
+/* SLIDER */
+.slider { width: 98%; margin: 10px auto; background: white; height: 250px; display: flex; align-items: center; justify-content: center; border: 1px solid #ddd; }
+.slider h2 { color: #555; }
+
+/* SECTIONS */
+.section { background: white; margin: 10px auto; width: 98%; padding: 15px; box-shadow: 0 1px 1px rgba(0,0,0,0.1); }
+.section-header { display: flex; justify-content: space-between; border-bottom: 1px solid #f0f0f0; padding-bottom: 10px; margin-bottom: 15px; }
+.section-header h2 { font-size: 20px; font-weight: 500; }
+
+/* PRODUCT CARDS (Horizontal Scroll) */
+.horizontal-scroll { display: flex; gap: 15px; overflow-x: auto; padding-bottom: 10px; }
+.product-card { min-width: 200px; padding: 10px; text-align: center; border: 1px solid #f0f0f0; transition: .2s; cursor: pointer; }
+.product-card:hover { box-shadow: 0 4px 8px rgba(0,0,0,0.1); transform: translateY(-2px); }
+.product-card img { height: 150px; object-fit: contain; margin-bottom: 10px; }
+.product-title { font-size: 14px; font-weight: 500; margin-bottom: 5px; }
+.product-price { font-size: 16px; font-weight: bold; }
+.product-rating { background: #388e3c; color: white; font-size: 12px; padding: 2px 6px; border-radius: 3px; display: inline-block; margin-top: 5px; }
+
+/* CATEGORY PAGE (Split Layout) */
+.cat-container { display: flex; width: 98%; margin: 10px auto; gap: 10px; }
+.sidebar { flex: 1; background: white; padding: 15px; height: fit-content; }
+.filter-group { margin-bottom: 20px; border-bottom: 1px solid #f0f0f0; padding-bottom: 10px; }
+.main-content { flex: 4; background: white; padding: 15px; }
+.grid-view { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 15px; }
+
+/* PRODUCT DETAIL PAGE */
+.detail-container { background: white; width: 98%; margin: 10px auto; display: flex; padding: 20px; }
+.left-view { flex: 1.5; text-align: center; position: sticky; top: 80px; align-self: flex-start; }
+.left-view img { max-height: 400px; max-width: 100%; border: 1px solid #f0f0f0; padding: 20px; }
+.action-btns { margin-top: 20px; display: flex; gap: 10px; }
+.btn-lg { flex: 1; padding: 15px; border: none; font-size: 16px; font-weight: bold; color: white; cursor: pointer; text-transform: uppercase; }
+.cart-btn { background: #ff9f00; } .buy-btn { background: #fb641b; }
+
+.right-view { flex: 2.5; padding-left: 30px; }
+.breadcrumb { font-size: 12px; color: #878787; margin-bottom: 10px; }
+.big-title { font-size: 18px; margin-bottom: 5px; }
+.big-price { font-size: 28px; font-weight: 500; margin: 10px 0; }
+.offers li { font-size: 14px; color: #212121; margin-bottom: 8px; }
+.tag-icon { color: #388e3c; margin-right: 5px; font-weight: bold; }
+
+/* FOOTER */
+.footer { background: #172337; color: white; padding: 40px 10%; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; font-size: 12px; margin-top: 40px; }
+.footer h3 { color: #878787; margin-bottom: 10px; font-size: 12px; text-transform: uppercase; }
+.footer a { display: block; margin-bottom: 5px; color: white; }
+.footer a:hover { text-decoration: underline; }
